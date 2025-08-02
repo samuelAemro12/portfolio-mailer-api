@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemailer src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -15,7 +15,7 @@
     "nodemailer": "^6.9.7"
   },
   "devDependencies": {
-    "nodemailer": "^3.0.3",
     "nodemon": "^3.1.10"
   }
 }
+
