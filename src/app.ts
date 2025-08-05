@@ -10,7 +10,7 @@ const app = express();
 // CORS configuration
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-portfolio-domain.com'] 
+    ? ['https://your-actual-domain.vercel.app', 'https://your-custom-domain.com'] 
     : ['http://localhost:5173', 'http://localhost:3000']
 }));
 
