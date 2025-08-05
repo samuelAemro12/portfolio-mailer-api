@@ -20,6 +20,19 @@ router.post("/", async (req: Request<{}, {}, ContactFormData>, res: Response) =>
     });
   }
 
+  // Add email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ 
+      success: false, 
+      error: "Invalid email format" 
+    });
+  }
+
+  // Sanitize inputs
+  const sanitizedName = name.trim().substring(0, 100);
+  const sanitizedMessage = message.trim().substring(0, 1000);
+
   const mailOptions = {
     from: email,
     to: process.env.TO_EMAIL,
